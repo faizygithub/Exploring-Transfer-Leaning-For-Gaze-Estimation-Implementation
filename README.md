@@ -322,17 +322,15 @@ For detailed information about the research methodology and experiment modes, se
 
 ## Citation
 
-If you use this code in your research, please cite:
+This code is associated with the paper:
 
-```bibtex
-@article{gaze_transfer_learning_2026,
-  title={Exploring Transfer Learning for Gaze Estimation: A Study on Model Adaptability},
-  author={[Your Name]},
-  year={2026},
-  journal={[Journal Name]},
-  note={Experimental code and framework available at https://github.com/[your-username]/[repository-name]}
-}
 ```
+Exploring Transfer Learning for Gaze Estimation: A Study on Model Adaptability
+```
+
+Citation information and repository will be available upon publication.
+
+
 
 **Associated Code Repository**: This is the official implementation of experiments for the above paper.
 
@@ -342,7 +340,7 @@ If you use this code in your research, please cite:
 
 ## Contact
 
-For questions or issues, please contact [your-email@example.com] or open an issue on GitHub.
+For questions or issues, please contact open an issue on GitHub.
 
 ## Acknowledgments
 
@@ -353,6 +351,5 @@ For questions or issues, please contact [your-email@example.com] or open an issu
 ---
 
 **Last Updated**: February 12, 2026  
-**Research Strategy**: Multi-participant transfer learning with dataset size evaluation  
 **Supported Regions**: Left Eye (LE), Face, Right Eye (RE)  
 **Repository**: [Add your GitHub URL]
