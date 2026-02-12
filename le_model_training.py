@@ -64,15 +64,15 @@ CONFIG = {
 
 # Dataset Configuration
 DATASET_FOLDERS = {
-    '100': 'E:\\Data\\FinalData\\AllData\\FirstExperimentOla\\LEWithOla\\folder_100',
-    '200': 'E:\\Data\\FinalData\\AllData\\FirstExperimentOla\\LEWithOla\\folder_200',
-    '300': 'E:\\Data\\FinalData\\AllData\\FirstExperimentOla\\LEWithOla\\folder_300',
-    '400': 'E:\\Data\\FinalData\\AllData\\FirstExperimentOla\\LEWithOla\\folder_400',
-    '500': 'E:\\Data\\FinalData\\AllData\\FirstExperimentOla\\LEWithOla\\folder_500',
+    '100': 'path_to_folder_100',  # Update with actual path
+    '200': 'path_to_folder_200',  # Update with actual path
+    '300': 'path_to_folder_300',  # Update with actual path
+    '400': 'path_to_folder_400',  # Update with actual path
+    '500': 'path_to_folder_500',  # Update with actual path
 }
 
-TEST_DATASET_FOLDER = 'E:\\Data\\FinalData\\AllData\\FirstExperimentOla\\LEWithOlaTest-All'
-BASELINE_DATASET_FOLDER = 'E:\\Data\\FinalData\\AllData\\FirstExperimentOla\\LEWithoutOla-All'
+TEST_DATASET_FOLDER = 'path_to_test_dataset_folder'  # Update with actual path
+BASELINE_DATASET_FOLDER = 'path_to_baseline_dataset_folder'  # Update with actual path
 
 
 # ============================================================================
@@ -485,17 +485,17 @@ def save_history_to_json(history, filename: str) -> None:
 
 def train_baseline_model(
     save_dir: str = ".",
-    model_name: str = "LEWithoutOla"
+    model_name: str = "LE_Participant"
 ) -> None:
     """
-    Train baseline model without Ola augmentation.
+    Train baseline model without Participant data.
     
     Args:
         save_dir: Directory to save model and history
         model_name: Name for the model files
     """
     print("\n" + "=" * 70)
-    print("BASELINE MODEL TRAINING (WITHOUT OLA)")
+    print("BASELINE MODEL TRAINING (WITHOUT Participant Data)")
     print("=" * 70)
     
     # Load data
@@ -558,7 +558,7 @@ def train_transfer_learning_model(
     if dataset_key not in DATASET_FOLDERS:
         raise ValueError(f"Invalid dataset key: {dataset_key}")
     
-    model_name = f"LEWithOlaRetrain_{dataset_key}"
+    model_name = f"LEWithParticipantRetrain_{dataset_key}"
     
     print("\n" + "=" * 70)
     print(f"TRANSFER LEARNING MODEL ({dataset_key} samples)")
@@ -612,7 +612,7 @@ def train_scratch_model(
     if dataset_key not in DATASET_FOLDERS:
         raise ValueError(f"Invalid dataset key: {dataset_key}")
     
-    model_name = f"LEWithOlaScratch_{dataset_key}"
+    model_name = f"LEWithParticipantScratch_{dataset_key}"
     
     print("\n" + "=" * 70)
     print(f"FROM SCRATCH MODEL ({dataset_key} samples)")
@@ -658,11 +658,11 @@ def main() -> None:
     # Print system information
     print_system_info()
     
-    # Step 1: Train baseline model without Ola
-    train_baseline_model(model_name="LEWithoutOla")
+    # Step 1: Train baseline model without Participant data
+    train_baseline_model(model_name="LEWithoutParticipant")
     
     # Step 2: Fine-tune baseline model with different dataset sizes
-    base_model = "LEWithoutOla.keras"
+    base_model = "LEWithoutParticipant.keras"
     for dataset_key in ['500', '400', '300', '200', '100']:
         train_transfer_learning_model(
             base_model_path=base_model,
