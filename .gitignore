@@ -1,0 +1,71 @@
+# ============================================================================
+# Python / Environment
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+.env
+.venv
+env/
+venv/
+ENV/
+
+# ============================================================================
+# Jupyter & IDE
+# ============================================================================
+.ipynb_checkpoints
+.vscode/
+.idea/
+*.sublime-project
+
+# ============================================================================
+# Project-Specific: Large Files & Outputs
+# ============================================================================
+# Model files (large, regenerable)
+*.keras
+*.h5
+*.hdf5
+
+# Training outputs
+training_history/
+results/
+checkpoints/
+
+# Data (very large, not version controlled)
+data/
+
+
+# ============================================================================
+# OS & Temporary
+# ============================================================================
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.tmp
+
+# ============================================================================
+# Important Files to KEEP (documentation, code)
+# ============================================================================
+# !*.py
+# !*.ipynb
+# !*.md
+# !*.txt
+# !config.py
+
+LE Ola.ipynb
+
+LIMITED_DATA_DOCUMENTATION_UPDATES.md
+QUICK_REFERENCE.md
+SUMMARY_UPDATES.md
+DOCUMENTATION_UPDATES.md
+CONTRIBUTING.md
+FINAL_VERIFICATION.md
+CHANGELOG.md
+
+
+
+
+
